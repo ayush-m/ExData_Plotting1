@@ -1,7 +1,5 @@
-#This will read the household_power_consumption.txt into a table named "data"
-data<-read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?", nrows=69990)  
-#convert Date column as Date data type
-data$Date<-as.Date(data$Date, format="%d/%m/%Y")
+data<-read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?", nrows=69990)  #This will read the household_power_consumption.txt into a table named "data"
+data$Date<-as.Date(data$Date, format="%d/%m/%Y")  #convert Date column as Date data type
 #Subsetting of data from the date from 01/Feb/2007 to 02/Feb/2007
 data<-data[data$Date>="2007-02-01" & data$Date<="2007-02-02",]
 #While doing the above subsetting the row names become different(i.e. not from 1 to number of rows in data)
