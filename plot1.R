@@ -3,7 +3,7 @@
 #Also we need to subset the date according to our requirement.
 #Here I have took the dates between 01/feb/2007 and 02/feb/2007
 #firstly we will start by reading the data from file into our object named as "data"
-
+#For this code to work, the file "househol_power_consumptions.txt" must be present in the working directory
 data<-read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?", nrows=69990)  #read the data from .txt file in the form of a table
 #here4 na.string is set to '?' beacuse NA values are reperesented by question mark(?)
 data$Date<-as.Date(data$Date, format="%d/%m/%Y")  #setting the Date column of data as Date datatype
